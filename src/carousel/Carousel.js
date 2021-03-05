@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Animated, Easing, FlatList, I18nManager, Platform, ScrollView, View, ViewPropTypes } from 'react-native';
+import { Animated, Easing, FlatList, I18nManager, Platform, View, ViewPropTypes } from 'react-native';
+import { ScrollView as GestureHandlerScrollView } from 'react-native-gesture-handler'
 import PropTypes from 'prop-types';
 import shallowCompare from 'react-addons-shallow-compare';
 import {
@@ -17,7 +18,7 @@ const IS_IOS = Platform.OS === 'ios';
 // Native driver for scroll events
 // See: https://facebook.github.io/react-native/blog/2017/02/14/using-native-driver-for-animated.html
 const AnimatedFlatList = FlatList ? Animated.createAnimatedComponent(FlatList) : null;
-const AnimatedScrollView = Animated.createAnimatedComponent(ScrollView);
+const AnimatedScrollView = Animated.createAnimatedComponent(GestureHandlerScrollView);
 
 // React Native automatically handles RTL layouts; unfortunately, it's buggy with horizontal ScrollView
 // See https://github.com/facebook/react-native/issues/11960
